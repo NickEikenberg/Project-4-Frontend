@@ -23,7 +23,7 @@ const Messages = () => {
             <div className="message" key={message.id}>
               <h3 className="message-title">Title: {message.title}</h3>
               <hr></hr>
-              <h4>Name: {message.name}</h4>
+              <h4>By {message.name}:</h4>
               <p>Message: {message.message}</p>
               <div>Likes: {message.likes}</div>
             </div>
