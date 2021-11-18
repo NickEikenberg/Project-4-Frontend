@@ -23,6 +23,7 @@ const Add = () => {
             name="message"
             placeholder="One good thing that happened today was..."
             onChange={getCharacterCount}
+            maxLength="280"
           ></textarea>
           <input type="submit" value="submit"></input>
         </form>
