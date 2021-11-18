@@ -5,12 +5,14 @@ import Header from './components/Header';
 import Add from './components/Add';
 
 const App = () => {
+  let [isAdding, setIsAdding] = useState(false);
+
   return (
     <div className="main_container">
-      <Header />
+      <Header isAdding={isAdding} setIsAdding={setIsAdding} />
       <h3>Tell me how great your day was</h3>
       <Messages></Messages>
-      <Add />
+      {isAdding ? <Add /> : null}
     </div>
   );
 };
