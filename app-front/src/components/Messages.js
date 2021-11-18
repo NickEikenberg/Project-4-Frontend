@@ -24,7 +24,7 @@ const Messages = () => {
               <h3 className="message-title">Title: {message.title}</h3>
               <hr></hr>
               <h4>By {message.name}:</h4>
-              <p>Message: {message.message}</p>
+              <p>{message.message}</p>
               <div>Likes: {message.likes}</div>
             </div>
           );
