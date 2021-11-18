@@ -6,7 +6,7 @@ const Header = () => {
     <div className="header">
       <div className="top_inner_header">
         <div className="logo_intro_wrap">
-          <div className="logo">OGT</div>
+          <div className="logo">LOGO</div>
           {/* <span id="lyrics">Today was <br/> a good day</span> */}
           <span id="intro">At least one GOOD thing happend today.</span>
         </div>
@@ -14,7 +14,7 @@ const Header = () => {
       </div>
       <div className="bottom_inner_header">
         <div className="tags">
-          <span>Tags:</span>
+        <span id="lyrics">Today was a good day</span>
         </div>
         <div className="form_wrap">
           <form>

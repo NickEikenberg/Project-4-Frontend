@@ -1,0 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.add_form_wrap {
+  width: 80%;
+  background-color: azure;
+  margin: 0 auto; 
+}
+form {
+
+}
+

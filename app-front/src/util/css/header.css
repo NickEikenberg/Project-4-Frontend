@@ -21,15 +21,8 @@
 }
 #lyrics {
   color:rgba(51, 51, 51, 0.89);
-  border: 2px solid rgba(102, 102, 102, 0.89);
   font-size: .8em;
   font-weight: bolder;
-  margin:  0 20px;
-  background-color: rgba(255, 255, 4, 0.849);
-  width: fit-content;
-  padding: 23px 7px;
-  -webkit-border-radiust: 50%;
-  border-radius: 50%;
 }
 #intro {
   /* color:rgba(255, 255, 4, 0.849); */
