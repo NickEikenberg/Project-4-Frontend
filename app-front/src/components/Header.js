@@ -1,7 +1,11 @@
 import React from 'react';
-import '../util/css/header.css'
+import '../util/css/header.css';
 
-const Header = () => {
+const Header = ({ isAdding, setIsAdding }) => {
+  const toggleAddForm = () => {
+    setIsAdding(!isAdding);
+  };
+
   return (
     <div className="header">
       <div className="top_inner_header">
@@ -10,7 +14,9 @@ const Header = () => {
           {/* <span id="lyrics">Today was <br/> a good day</span> */}
           <span id="intro">At least one GOOD thing happend today.</span>
         </div>
-        <div className="share">submit your OGT</div>
+        <div className="share" onClick={toggleAddForm}>
+          Submit Your OGT
+        </div>
       </div>
       <div className="bottom_inner_header">
         <div className="tags">
@@ -18,8 +24,8 @@ const Header = () => {
         </div>
         <div className="form_wrap">
           <form>
-            <input id="search_bar" type="text"/>
-            <input id="search"type="submit" value="search"/>
+            <input id="search_bar" type="text" />
+            <input id="search" type="submit" value="search" />
           </form>
         </div>
       </div>
