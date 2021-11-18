@@ -1,5 +1,5 @@
 import React from 'react';
-import '../util/css/add.scss';
+// import '../util/css/add.css';
 
 const Add = () => {
   return <h4>Add form</h4>;

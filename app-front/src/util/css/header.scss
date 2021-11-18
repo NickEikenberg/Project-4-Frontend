@@ -1,43 +1,75 @@
 .header {
+  width: 100%;
+
   .top_inner_header {
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(0, 0, 255, 0.445);
+    background-color: rgba(0, 0, 255, 0.651);
 
     .logo_intro_wrap {
+      display: flex;
+      align-items: center;
+      justify-items: center;
+      justify-content: space-between;
       .logo {
         font-size: 3.2em;
         font-weight: bolder;
-        color: rgba(255, 255, 255, 0.993);
+        color: rgba(245, 244, 244, 0.973);
       }
       #lyrics {
-        padding: 3px 5px;
+        color: rgba(51, 51, 51, 0.89);
+        border: 2px solid rgba(102, 102, 102, 0.89);
+        font-size: 0.8em;
+        font-weight: bolder;
+        margin: 0 20px;
+        background-color: rgba(255, 255, 4, 0.849);
+        width: fit-content;
+        padding: 23px 7px;
+        -webkit-border-radiust: 50%;
+        border-radius: 50%;
       }
-      display: flex;
-      align-items: center;
+      #intro {
+        color: rgba(255, 255, 4, 0.849);
+        // border: 2px solid rgba(255, 255, 4, 0.849);
+        padding: 0 8px;
+        // border-radius: 5px;
+        font-size: 1.2em;
+        font-weight: bolder;
+      }
     }
     .share {
       padding: 10px 20px;
       text-align: center;
+      // color: rgba(245, 244, 244, 0.973);
       color: rgba(51, 51, 51, 0.89);
       border: 2px solid rgba(51, 51, 51, 0.89);
-      font-size: .9em;
+      font-size: 0.9em;
       border-radius: 5px;
       font-weight: bold;
-      background-color: rgba(243, 241, 241, 0.712);
+      background-color: rgba(255, 255, 4, 0.849);
+      // background-color: rgba(245, 244, 244, 0.973);
 
       &:hover {
         cursor: pointer;
-
       }
     }
-
   }
-  .bottom_inner_header{
-    padding: 10px;
+  .bottom_inner_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: auto;
     background-color: rgb(9, 209, 142);
-    
+    padding: 10px;
+
+    #earch_bar {
+      width: 100%;
+      padding: 50px 8px;
+      font-size: 0.8em;
+      border: 0.5px solid #3d3d3d;
+      box-sizing: border-box;
+    }
   }
 }
