@@ -1,5 +1,5 @@
 import React from 'react';
-import '../util/css/header.scss'
+import '../util/css/header.css'
 
 const Header = () => {
   return (
@@ -18,8 +18,8 @@ const Header = () => {
         </div>
         <div className="form_wrap">
           <form>
-            <input id="search_bar" type="text"></input>
-            <input type="submit" value="search"/>
+            <input id="search_bar" type="text"/>
+            <input id="search"type="submit" value="search"/>
           </form>
         </div>
       </div>
