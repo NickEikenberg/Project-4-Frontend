@@ -7,16 +7,21 @@ const Header = () => {
       <div className="top_inner_header">
         <div className="logo_intro_wrap">
           <div className="logo">OGT</div>
-          <span id="lyrics">"Today was <br/> a good day"</span>
-          <span>The best things in life happen NOW</span>
+          {/* <span id="lyrics">Today was <br/> a good day</span> */}
+          <span id="intro">At least one GOOD thing happend today.</span>
         </div>
         <div className="share">submit your OGT</div>
       </div>
       <div className="bottom_inner_header">
-        <form>
-          <input type="text"></input>
-          <input type="submit" value="search"/>
-        </form>
+        <div className="tags">
+          <span>Tags:</span>
+        </div>
+        <div className="form_wrap">
+          <form>
+            <input id="search_bar" type="text"></input>
+            <input type="submit" value="search"/>
+          </form>
+        </div>
       </div>
     </div>
   )
