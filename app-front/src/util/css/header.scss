@@ -1,0 +1,43 @@
+.header {
+  .top_inner_header {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 255, 0.445);
+
+    .logo_intro_wrap {
+      .logo {
+        font-size: 3.2em;
+        font-weight: bolder;
+        color: rgba(255, 255, 255, 0.993);
+      }
+      #lyrics {
+        padding: 3px 5px;
+      }
+      display: flex;
+      align-items: center;
+    }
+    .share {
+      padding: 10px 20px;
+      text-align: center;
+      color: rgba(51, 51, 51, 0.89);
+      border: 2px solid rgba(51, 51, 51, 0.89);
+      font-size: .9em;
+      border-radius: 5px;
+      font-weight: bold;
+      background-color: rgba(243, 241, 241, 0.712);
+
+      &:hover {
+        cursor: pointer;
+
+      }
+    }
+
+  }
+  .bottom_inner_header{
+    padding: 10px;
+    background-color: rgb(9, 209, 142);
+    
+  }
+}
