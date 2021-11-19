@@ -28,10 +28,11 @@ const Add = (props) => {
   //need to handle submit in here
   //takes message as argument wich has the state
   //pushes message to api
-  const handleSubmit = (event) => {
-    event.preventDafault()
-    // props.handleCreate(message)
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.handleCreate(message);
+    toggleAddForm();
+  };
 
   return (
     <div className="add_good_thing_container">
