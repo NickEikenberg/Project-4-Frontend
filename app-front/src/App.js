@@ -3,9 +3,11 @@ import axios from 'axios';
 import Messages from './components/Messages';
 import Header from './components/Header';
 import Add from './components/Add';
+import Edit from './components/Edit';
 
 const App = () => {
-  let [isAdding, setIsAdding] = useState(true);
+  let [isAdding, setIsAdding] = useState(false);
+  let [isEditing, setIsEditing] = useState(false);
   let [messages, setMessages] = useState([]);
 
   //connect to API and pull data
@@ -53,6 +55,9 @@ const App = () => {
           isAdding={isAdding}
           setIsAdding={setIsAdding}
         />
+      ) : null}
+      {isEditing ? (
+        <Edit isEditing={isEditing} setIsEditing={setIsEditing} />
       ) : null}
     </div>
   );

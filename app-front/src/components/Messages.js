@@ -27,9 +27,12 @@ const Messages = (props) => {
               <h4>By {message.name}:</h4>
               <p>{message.message}</p>
               <div>Likes: {message.likes}</div>
-              <button onClick={props.handleDelete} value={message.id}>
-                Delete
-              </button>
+              <div className="btn-container">
+                <button onClick={props.toggleEditForm}>Edit</button>
+                <button onClick={props.handleDelete} value={message.id}>
+                  Delete
+                </button>
+              </div>
             </div>
           );
         })}
