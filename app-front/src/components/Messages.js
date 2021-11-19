@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../util/css/messages.css';
 
 const Messages = (props) => {
   let [messages, setMessages] = useState([]);
 
-  // const getMessages = () => {
-  //   axios.get('http://localhost:8000/api/messages').then(
-  //     (res) => setMessages(res.data),
-  //     (err) => console.error(err)
-  //   );
-  // };
+  const getMessages = () => {
+    axios.get('http://localhost:8000/api/messages').then(
+      (res) => setMessages(res.data),
+      (err) => console.error(err)
+    );
+  };
 
-  // useEffect(() => {
-  //   getMessages();
-  // }, []);
+  useEffect(() => {
+    getMessages();
+  }, []);
 
   return (
     <div className="messages-container">
@@ -26,7 +27,9 @@ const Messages = (props) => {
               <h4>By {message.name}:</h4>
               <p>{message.message}</p>
               <div>Likes: {message.likes}</div>
-              <button onClick={props.handleDelete} value={message.id}>Delete</button>
+              <button onClick={props.handleDelete} value={message.id}>
+                Delete
+              </button>
             </div>
           );
         })}
