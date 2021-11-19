@@ -6,35 +6,37 @@ import Add from './components/Add';
 
 const App = () => {
   let [isAdding, setIsAdding] = useState(true);
-  let [goodThing, setGoodThing] = useState([])
+  let [messages, setMessages] = useState([])
   
-  //create
-  const handleCreate = () => {
-    axios.post().then((response) => {
-      console.log(response.data);
-      getGoodThings()
-    })
-  }
-
   //connect to API
-  const getGoodThings = () => {
+  const getMessages = () => {
     axios
-      .get('')
-      .then((response) => setGoodThing(response.data),
+      .get('http://localhost:8000/api/messages')
+      .then((response) => setMessages(response.data),
         (err) => console.error(err)
     )
     .catch((error) => console.error(error))
   }
+
+  //create connection to push to API
+  //will take argument which will take state of message
+  const handleCreate = (newMessage) => {
+    axios.post('http://localhost:8000/api/messages', newMessage) //what to push to api
+      .then((response) => {
+      console.log(response.data);
+      getMessages()
+    })
+  }
   //connect to axios  
   useEffect(() => {
-    getGoodThings()
+    getMessages()
   }, [])
   
 
   return (
     <div className="main_container">
       <Header isAdding={isAdding} setIsAdding={setIsAdding} />
-      <Messages />
+      <Messages messages={messages}/>
       {
         isAdding ?
           <Add handleCreate={handleCreate}/>

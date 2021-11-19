@@ -18,13 +18,22 @@ const Add = (props) => {
   //targets the value of each imput based on name
   const handleChange = (e) => {
     setMessage({ ...message, [e.target.name]: e.target.value })
+    console.log(message);
+  }
+  
+  //need to handle submit in here 
+  //takes message as argument wich has the state
+  //pushes message to api
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.handleCreate(message)
   }
 
   return (
     <div className="add_good_thing_container">
       <h1>SUBMIT YOUR GOOD MOMENT</h1>
       <div className="good_thing_form">
-        <form className="add_thing">
+        <form onSubmit={handleSubmit} className="add_thing">
           <label htmlFor="name">Name: </label>
           <input
             type="text" name="name"

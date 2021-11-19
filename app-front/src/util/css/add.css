@@ -36,6 +36,7 @@ label {
 }
 .text_area {
   width: 85%;
+  padding: 6px 20px;
 }
 .send {
   padding: 6px 60px;
