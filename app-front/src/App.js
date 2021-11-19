@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Add from './components/Add';
 
 const App = () => {
-  let [isAdding, setIsAdding] = useState(true);
+  let [isAdding, setIsAdding] = useState(false);
   let [messages, setMessages] = useState([]);
 
   //connect to API and pull data
@@ -38,6 +38,10 @@ const App = () => {
       });
   };
 
+  // const toggleEditForm = () => {
+  //   setIsEditing(!isEditing);
+  // };
+
   //connect to axios
   useEffect(() => {
     getMessages();
@@ -46,7 +50,11 @@ const App = () => {
   return (
     <div className="main_container">
       <Header isAdding={isAdding} setIsAdding={setIsAdding} />
-      <Messages messages={messages} handleDelete={handleDelete} />
+      <Messages
+        messages={messages}
+        handleDelete={handleDelete}
+        // toggleEditForm={toggleEditForm}
+      />
       {isAdding ? (
         <Add
           handleCreate={handleCreate}
