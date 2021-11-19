@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Messages = (props) => {
-  // let [messages, setMessages] = useState([]);
+  let [messages, setMessages] = useState([]);
 
   // const getMessages = () => {
   //   axios.get('http://localhost:8000/api/messages').then(
@@ -26,6 +26,7 @@ const Messages = (props) => {
               <h4>By {message.name}:</h4>
               <p>{message.message}</p>
               <div>Likes: {message.likes}</div>
+              <button onClick={props.handleDelete} value={message.id}>Delete</button>
             </div>
           );
         })}

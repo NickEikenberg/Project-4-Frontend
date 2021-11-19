@@ -25,7 +25,7 @@ const Add = (props) => {
   //takes message as argument wich has the state
   //pushes message to api
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDafault()
     props.handleCreate(message)
   }
 
