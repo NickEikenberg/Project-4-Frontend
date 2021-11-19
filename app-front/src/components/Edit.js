@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 
 const Edit = (props) => {
+  console.log(props.message);
   let [characterCount, setCharacterCount] = useState(280);
+  let [message, setMessage] = useState({ ...props.message });
 
   const getCharacterCount = () => {
     const text = document.getElementById('textarea');
@@ -28,20 +30,10 @@ const Edit = (props) => {
         <div className="good_thing_form">
           <div className="add-head">
             <div className="empty-space"></div>
-            <h2>SUBMIT YOUR GOOD MOMENT</h2>
+            <h2>EDIT YOUR GOOD MOMENT</h2>
             <div className="close-modal">X</div>
           </div>
           <form onSubmit={handleSubmit} className="add_thing">
-            <label htmlFor="name">Name: </label>
-            <input
-              type="text"
-              name="name"
-              className="input"
-              onChange={handleChange}
-              //   value={message.name}
-            />
-            <br />
-            <br />
             <label htmlFor="name">Title: </label>
             <input
               type="text"
@@ -58,7 +50,7 @@ const Edit = (props) => {
               name="message"
               rows="6"
               cols="59"
-              placeholder="One good thing that happened today was..."
+              placeholder={props.message}
               onChange={(event) => {
                 getCharacterCount();
                 handleChange(event);
