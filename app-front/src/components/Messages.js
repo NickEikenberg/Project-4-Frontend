@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../util/css/messages.css';
 
-const Messages = () => {
+const Messages = (props) => {
   let [messages, setMessages] = useState([]);
 
   const getMessages = () => {
@@ -18,14 +19,17 @@ const Messages = () => {
   return (
     <div className="messages-container">
       <div className="messages">
-        {messages.map((message) => {
+        {props.messages.map((message) => {
           return (
             <div className="message" key={message.id}>
               <h3 className="message-title">Title: {message.title}</h3>
               <hr></hr>
               <h4>By {message.name}:</h4>
-              <p>Message: {message.message}</p>
+              <p>{message.message}</p>
               <div>Likes: {message.likes}</div>
+              <button onClick={props.handleDelete} value={message.id}>
+                Delete
+              </button>
             </div>
           );
         })}
