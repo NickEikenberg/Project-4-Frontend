@@ -12,16 +12,18 @@ const App = () => {
   const getMessages = () => {
     axios
       .get('http://localhost:8000/api/messages')
-      .then((response) => setMessages(response.data),
+      .then(
+        (response) => setMessages(response.data),
         (err) => console.error(err)
-    )
-    .catch((error) => console.error(error))
-  }
+      )
+      .catch((error) => console.error(error));
+  };
 
   //create connection to push to API
   //will take argument which will take state of message
   const handleCreate = (newMessage) => {
-    axios.post('http://localhost:8000/api/messages', newMessage) //what to push to api
+    axios
+      .post('http://localhost:8000/api/messages', newMessage) //what to push to api
       .then((response) => {
       console.log(response.data);
       getMessages()
@@ -38,9 +40,8 @@ const App = () => {
   }
   //connect to axios  
   useEffect(() => {
-    getMessages()
-  }, [])
-  
+    getMessages();
+  }, []);
 
   return (
     <div className="main_container">
@@ -48,12 +49,15 @@ const App = () => {
       <Messages
         messages={messages}
         handleDelete={handleDelete}
+        // toggleEditForm={toggleEditForm}
       />
-      {
-        isAdding ?
-          <Add handleCreate={handleCreate}/>
-        : null
-      }
+      {isAdding ? (
+        <Add
+          handleCreate={handleCreate}
+          isAdding={isAdding}
+          setIsAdding={setIsAdding}
+        />
+      ) : null}
     </div>
   );
 };

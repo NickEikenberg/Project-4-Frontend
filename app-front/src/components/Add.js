@@ -1,11 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import '../util/css/add.css';
 
 const Add = (props) => {
   //state of form
-  let defalutForm = { name: '', title: '', message: '' }
-  let [message, setMessage] = useState(defalutForm)
-  
+  let defalutForm = { name: '', title: '', message: '' };
+  let [message, setMessage] = useState(defalutForm);
+
+  const toggleAddForm = () => {
+    props.setIsAdding(!props.isAdding);
+  };
+
   //get character count
   let [characterCount, setCharacterCount] = useState(280);
   const getCharacterCount = () => {
@@ -17,11 +21,11 @@ const Add = (props) => {
   //handle change
   //targets the value of each imput based on name
   const handleChange = (e) => {
-    setMessage({ ...message, [e.target.name]: e.target.value })
+    setMessage({ ...message, [e.target.name]: e.target.value });
     console.log(message);
-  }
-  
-  //need to handle submit in here 
+  };
+
+  //need to handle submit in here
   //takes message as argument wich has the state
   //pushes message to api
   const handleSubmit = (event) => {
@@ -31,12 +35,19 @@ const Add = (props) => {
 
   return (
     <div className="add_good_thing_container">
-      <h1>SUBMIT YOUR GOOD MOMENT</h1>
       <div className="good_thing_form">
+        <div className="add-head">
+          <div className="empty-space"></div>
+          <h2>SUBMIT YOUR GOOD MOMENT</h2>
+          <div className="close-modal" onClick={toggleAddForm}>
+            X
+          </div>
+        </div>
         <form onSubmit={handleSubmit} className="add_thing">
           <label htmlFor="name">Name: </label>
           <input
-            type="text" name="name"
+            type="text"
+            name="name"
             className="input"
             onChange={handleChange}
             value={message.name}
@@ -45,7 +56,8 @@ const Add = (props) => {
           <br />
           <label htmlFor="name">Title: </label>
           <input
-            type="text" name="title"
+            type="text"
+            name="title"
             className="input"
             onChange={handleChange}
             value={message.title}
@@ -56,18 +68,22 @@ const Add = (props) => {
           <textarea
             id="textarea"
             name="message"
-            rows="6" cols="59"
+            rows="6"
+            cols="59"
             placeholder="One good thing that happened today was..."
-            onChange={getCharacterCount, handleChange}
+            onChange={(event) => {
+              getCharacterCount();
+              handleChange(event);
+            }}
             maxLength="280"
             className="text_area"
             value={message.message}
           ></textarea>
           <br />
           <br />
-          <input className="send" type="submit" value="submit"></input>
+          <input className="send" type="submit" value="SUBMIT"></input>
         </form>
-        <br/>
+        <br />
         <span>Character count: {characterCount}</span>
       </div>
     </div>
