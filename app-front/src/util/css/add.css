@@ -3,13 +3,44 @@
   margin: 0;
   box-sizing: border-box;
 }
-
-.add_form_wrap {
-  width: 80%;
-  background-color: azure;
-  margin: 0 auto; 
+.add_good_thing_container {
+  width: 100%;
+  padding: 10px 0;
 }
-form {
+
+h1 {
+  text-align: center;
+}
+.good_thing_form {
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+  border: 2px solid;
+}
+label {
+  display: inline-block;
+  width: 15%;
+  clear: both;
+  
+}
+.add_thing {
+  width: 100%;
+  margin: auto;
+  display: inline-block;
+  padding: 20px;
+
+}
+.input {
+  width: 85%;
+  padding: 6px 20px;
+}
+.text_area {
+  width: 85%;
+}
+.send {
+  padding: 6px 60px;
+  display: block;
+  margin: auto;
 
 }
 
