@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Edit from './Edit';
 
 const Messages = (props) => {
-  let [messages, setMessages] = useState([]);
+  // let [messages, setMessages] = useState([]);
 
   // const getMessages = () => {
   //   axios.get('http://localhost:8000/api/messages').then(

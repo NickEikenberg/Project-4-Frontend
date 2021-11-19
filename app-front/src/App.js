@@ -8,7 +8,7 @@ const App = () => {
   let [isAdding, setIsAdding] = useState(true);
   let [messages, setMessages] = useState([])
   
-  //connect to API and pull data
+  //connect to API
   const getMessages = () => {
     axios
       .get('http://localhost:8000/api/messages')
@@ -27,7 +27,8 @@ const App = () => {
       getMessages()
     })
   }
-  //delete takes an argument
+
+
   const handleDelete = (e) => {
     axios
       .delete('http://localhost:8000/api/messages/' + e.target.value)
@@ -35,7 +36,6 @@ const App = () => {
         getMessages()
       })
   }
-
   //connect to axios  
   useEffect(() => {
     getMessages()
@@ -44,10 +44,7 @@ const App = () => {
 
   return (
     <div className="main_container">
-      <Header
-        isAdding={isAdding}
-        setIsAdding={setIsAdding}
-      />
+      <Header isAdding={isAdding} setIsAdding={setIsAdding} />
       <Messages
         messages={messages}
         handleDelete={handleDelete}
