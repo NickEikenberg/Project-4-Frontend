@@ -6,13 +6,13 @@ import Add from './components/Add';
 import Footer from './components/Footer'
 
 const App = () => {
-  let [isAdding, setIsAdding] = useState(true);
+  let [isAdding, setIsAdding] = useState(false);
   let [messages, setMessages] = useState([]);
 
   //connect to API and pull data
   const getMessages = () => {
     axios
-      .get('http://localhost:8000/api/messages')
+      .get('https://one-good-thing.herokuapp.com/api/messages')
       .then(
         (response) => setMessages(response.data),
         (err) => console.error(err)
@@ -24,7 +24,7 @@ const App = () => {
   //will take argument which will take state of message
   const handleCreate = (newMessage) => {
     axios
-      .post('http://localhost:8000/api/messages', newMessage) //what to push to api
+      .post('https://one-good-thing.herokuapp.com/api/messages', newMessage) //what to push to api
       .then((response) => {
         console.log(response.data);
         getMessages();
@@ -33,11 +33,17 @@ const App = () => {
   //delete takes an argument
   const handleDelete = (e) => {
     axios
-      .delete('http://localhost:8000/api/messages/' + e.target.value)
+      .delete(
+        'https://one-good-thing.herokuapp.com/api/messages/' + e.target.value
+      )
       .then((response) => {
         getMessages();
       });
   };
+
+  // const toggleEditForm = () => {
+  //   setIsEditing(!isEditing);
+  // };
 
   //connect to axios
   useEffect(() => {
@@ -47,7 +53,11 @@ const App = () => {
   return (
     <div className="main_container">
       <Header isAdding={isAdding} setIsAdding={setIsAdding} />
-      <Messages messages={messages} handleDelete={handleDelete} />
+      <Messages
+        messages={messages}
+        handleDelete={handleDelete}
+        // toggleEditForm={toggleEditForm}
+      />
       {isAdding ? (
         <Add
           handleCreate={handleCreate}

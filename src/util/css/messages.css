@@ -3,3 +3,9 @@
   flex-direction: column;
   width: 90%;
 }
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  width: 4em;
+}
