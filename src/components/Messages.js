@@ -11,7 +11,7 @@ const Messages = (props) => {
           return (
             <>
               <div className="message" key={message.id}>
-                <h3 className="message-title">Title: {message.title}</h3>
+                <h3 className="message-title">{message.title}</h3>
                 <hr></hr>
                 <h4>By {message.name}:</h4>
                 <p>{message.message}</p>
@@ -21,10 +21,7 @@ const Messages = (props) => {
                     Delete
                   </button>
                 </div>
-                <Edit
-                  message={message}
-                  handleUpdate={props.handleUpdate}
-                />
+                <Edit message={message} handleUpdate={props.handleUpdate} />
               </div>
             </>
           );
