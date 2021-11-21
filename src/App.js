@@ -3,6 +3,7 @@ import axios from 'axios';
 import Messages from './components/Messages';
 import Header from './components/Header';
 import Add from './components/Add';
+import Footer from './components/Footer';
 
 const App = () => {
   let [isAdding, setIsAdding] = useState(false);
@@ -64,6 +65,7 @@ const App = () => {
           setIsAdding={setIsAdding}
         />
       ) : null}
+      <Footer/>
     </div>
   );
 };
