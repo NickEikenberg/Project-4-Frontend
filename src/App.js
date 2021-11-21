@@ -8,9 +8,6 @@ import Edit from './components/Edit';
 const App = () => {
   let [isAdding, setIsAdding] = useState(false);
   let [messages, setMessages] = useState([])
-  let [isEditing, setIsEditing ] = useState(false)
-
-
   
   //connect to API
   const getMessages = () => {
@@ -44,20 +41,12 @@ const App = () => {
       })
   }
 
-  const handleUpdate = () => {
+  const handleUpdate = (editMessage) => {
     axios
-      .put()
+      .put('https://one-good-thing.herokuapp.com/api/messages/' + editMessage.id, editMessage)
       .then((response) => {
-
+        getMessages()
       })
-  }
-
-  const toggleEditForm = () => {
-    if (isEditing === false) {
-      setIsEditing(true)
-    } if (isEditing === true) {
-      setIsEditing(false)
-    }
   }
 
   //connect to axios  
@@ -71,7 +60,7 @@ const App = () => {
       <Messages
         messages={messages}
         handleDelete={handleDelete}
-        toggleEditForm={toggleEditForm}
+        handleUpdate={handleUpdate}
       />
       {isAdding ? (
         <Add
@@ -80,19 +69,6 @@ const App = () => {
           setIsAdding={setIsAdding}
         />
       ) : null}
-
-      {
-        isEditing ? (
-          <Edit
-            handleUpdate={handleUpdate}
-            isEditing={isEditing}
-            toggleEditForm={toggleEditForm}
-          />
-        ) : (
-            <></>
-        )
-      }
-
     </div>
   );
 };
