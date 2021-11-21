@@ -1,7 +1,7 @@
 # One Good Thing
 ![one (1)](https://media.git.generalassemb.ly/user/38345/files/be267400-4a46-11ec-8aa9-566a2659719d)
 <ol>
-  Created by Nick Eikenberg, Dom Mentee, & Jamie Alcazar as part of their P4 submission for GA SEIR ~ Visit the app here:
+  Created by Nick Eikenberg, Dom Mentee, & Jamie Alcazar as part of their P4 submission for GA SEIR ~ Visit the app here: https://warm-tundra-53594.herokuapp.com/ (frontend) & https://one-good-thing.herokuapp.com/api/messages (backend)
 </ol>
 
 ### About the App
