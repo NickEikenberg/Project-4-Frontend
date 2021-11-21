@@ -9,10 +9,10 @@ const Footer = () => {
         <div class="container">
           <div class="row">
             <div class="column">
-              <h3>Find Us on Github</h3>
+              <h3>Find Us on Github/portfolio</h3>
               <ul>
                 <li><a href="https://github.com/NickEikenberg">Nick Eikenberg</a></li>
-                <li><a href="https://git.generalassemb.ly/domcharm">Dom Mentee</a></li>
+                <li><a href="https://domacor.netlify.app/">Dom Mentee</a></li>
                 <li><a href="https://git.generalassemb.ly/jamiealcazar">Jamie Alcazar</a></li>
               </ul>
             </div>
