@@ -3,11 +3,7 @@ import axios from 'axios';
 import Messages from './components/Messages';
 import Header from './components/Header';
 import Add from './components/Add';
-<<<<<<< HEAD
-import Edit from './components/Edit';
-=======
 import Footer from './components/Footer';
->>>>>>> 64d1a594592a64aff8ab648df0dd1782fb714dc0
 
 const App = () => {
   let [isAdding, setIsAdding] = useState(false);
