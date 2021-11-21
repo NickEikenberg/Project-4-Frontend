@@ -9,7 +9,7 @@ const App = () => {
   let [isAdding, setIsAdding] = useState(false);
   let [messages, setMessages] = useState([]);
 
-  //connect to API and pull data
+  //connect to API
   const getMessages = () => {
     axios
       .get('https://one-good-thing.herokuapp.com/api/messages')
@@ -30,7 +30,7 @@ const App = () => {
         getMessages();
       });
   };
-  //delete takes an argument
+
   const handleDelete = (e) => {
     axios
       .delete(
@@ -41,9 +41,16 @@ const App = () => {
       });
   };
 
-  // const toggleEditForm = () => {
-  //   setIsEditing(!isEditing);
-  // };
+  const handleUpdate = (editMessage) => {
+    axios
+      .put(
+        'https://one-good-thing.herokuapp.com/api/messages/' + editMessage.id,
+        editMessage
+      )
+      .then((response) => {
+        getMessages();
+      });
+  };
 
   //connect to axios
   useEffect(() => {
@@ -56,7 +63,7 @@ const App = () => {
       <Messages
         messages={messages}
         handleDelete={handleDelete}
-        // toggleEditForm={toggleEditForm}
+        handleUpdate={handleUpdate}
       />
       {isAdding ? (
         <Add
@@ -65,7 +72,7 @@ const App = () => {
           setIsAdding={setIsAdding}
         />
       ) : null}
-      <Footer/>
+      <Footer />
     </div>
   );
 };
