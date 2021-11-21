@@ -4,7 +4,6 @@ import Messages from './components/Messages';
 import Header from './components/Header';
 import Add from './components/Add';
 import Footer from './components/Footer';
-import Edit from './components/Edit';
 
 const App = () => {
   let [isAdding, setIsAdding] = useState(false);
