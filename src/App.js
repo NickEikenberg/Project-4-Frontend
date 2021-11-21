@@ -3,10 +3,14 @@ import axios from 'axios';
 import Messages from './components/Messages';
 import Header from './components/Header';
 import Add from './components/Add';
+import Edit from './components/Edit';
 
 const App = () => {
-  let [isAdding, setIsAdding] = useState(true);
+  let [isAdding, setIsAdding] = useState(false);
   let [messages, setMessages] = useState([])
+  let [isEditing, setIsEditing ] = useState(false)
+
+
   
   //connect to API
   const getMessages = () => {
@@ -30,7 +34,6 @@ const App = () => {
     })
   }
 
-
   const handleDelete = (e) => {
     axios
       .delete(
@@ -40,6 +43,23 @@ const App = () => {
         getMessages()
       })
   }
+
+  const handleUpdate = () => {
+    axios
+      .put()
+      .then((response) => {
+
+      })
+  }
+
+  const toggleEditForm = () => {
+    if (isEditing === false) {
+      setIsEditing(true)
+    } if (isEditing === true) {
+      setIsEditing(false)
+    }
+  }
+
   //connect to axios  
   useEffect(() => {
     getMessages();
@@ -51,7 +71,7 @@ const App = () => {
       <Messages
         messages={messages}
         handleDelete={handleDelete}
-        // toggleEditForm={toggleEditForm}
+        toggleEditForm={toggleEditForm}
       />
       {isAdding ? (
         <Add
@@ -60,6 +80,19 @@ const App = () => {
           setIsAdding={setIsAdding}
         />
       ) : null}
+
+      {
+        isEditing ? (
+          <Edit
+            handleUpdate={handleUpdate}
+            isEditing={isEditing}
+            toggleEditForm={toggleEditForm}
+          />
+        ) : (
+            <></>
+        )
+      }
+
     </div>
   );
 };
