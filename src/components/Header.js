@@ -10,9 +10,11 @@ const Header = ({ isAdding, setIsAdding }) => {
     <div className="header">
       <div className="top_inner_header">
         <div className="logo_intro_wrap">
-          <div className="logo">LOGO</div>
+          <div className="logo">
+            <img src="https://i.imgur.com/Umksv2s.png"/>
+          </div>
           {/* <span id="lyrics">Today was <br/> a good day</span> */}
-          <span id="intro">At least one GOOD thing happend today.</span>
+          <span id="intro">At least one GOOD thing happened today.</span>
         </div>
         <div className="share" onClick={toggleAddForm}>
           Submit Your OGT

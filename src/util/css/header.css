@@ -15,9 +15,10 @@
   justify-content: space-between;
 }
 .logo {
-  font-size: 3.2em;
-  font-weight: bolder;
-  /* color: rgba(245, 244, 244, 0.973); */
+  width: 5em
+}
+.logo img{
+  width: 100%
 }
 #lyrics {
   color:rgba(51, 51, 51, 0.89);
@@ -52,7 +53,7 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 overflow: auto;
-background-color: rgb(9, 209, 142);
+background-color: #303C6C;
 padding: 10px;
 }
 .form_wrap {
@@ -68,9 +69,12 @@ form {
   padding: 4px 8px;
   font-size: .8em;
   border: .5px solid #3D3D3D;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   margin: 0 4px;
 }
 #search {
   padding: 2px 15px;
+}
+#lyrics {
+  color: white;
 }
