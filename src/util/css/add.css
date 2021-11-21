@@ -13,31 +13,37 @@
 
 .add-head {
   text-align: center;
-  background: rgb(9, 209, 142);
   display: flex;
   justify-content: space-between;
 }
 .add-head h2 {
   font-size: 1.3em;
+
+  color: #303C6C;
+  padding: 2px;
 }
 .empty-space {
   width: 1.3em;
 }
 
 .close-modal {
-  font-size: 1.3em;
+  font-size: 2em;
+  font-weight: bolder;
   cursor: pointer;
-  color: rgb(161, 136, 136);
+  color: #F4976C;
+}
+.close-modal:hover {
+  color: #B4DFE5
 }
 
 .good_thing_form {
   width: 50%;
   margin: 10% auto;
-  padding: 10px;
-  border: 2px solid;
+  padding: 15px;
+  border: 2px solid #303C6C;
   border-radius: 10px;
   background: rgb(241, 235, 235);
-  box-shadow: 5px 5px 3px black;
+  box-shadow: 10px 10px 3px rgba(70, 70, 70, 0.651);
 }
 label {
   display: inline-block;
@@ -59,8 +65,18 @@ label {
   padding: 1em;
 }
 .send {
-  padding: 6px 60px;
+  padding: 9px 60px;
+  font-size: .7em;
   display: block;
   margin: auto;
-  background: rgb(9, 209, 142);
+  border-radius: 5px;
+  background-color: #B4DFE5;
+  border: 2px solid #303C6C;
+  color: #303C6C;
+  font-weight: bold;
+  cursor: pointer;
 }
+.send:hover {
+  background-color: #F4976C;
+}
+

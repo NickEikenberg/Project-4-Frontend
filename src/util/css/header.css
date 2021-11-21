@@ -1,8 +1,8 @@
 .header {
-  width: 100%;
+  width: 90%;
 }
 .top_inner_header {
-  padding: 7px;
+  padding: 1% 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -21,15 +21,13 @@
   width: 100%
 }
 #lyrics {
-  color:rgba(51, 51, 51, 0.89);
-  font-size: .8em;
+  color: #F4976C;
+  font-size: .6em;
   font-weight: bolder;
 }
 #intro {
-  /* color:rgba(255, 255, 4, 0.849); */
-  /* // border: 2px solid rgba(255, 255, 4, 0.849); */
+  color: #303C6C;
   padding: 0 8px;
-  /* // border-radius: 5px; */
   font-size: 1.2em;
   font-weight: bolder;
 }
@@ -37,24 +35,22 @@
   padding: 10px 20px;
   text-align: center;
   /* // color: rgba(245, 244, 244, 0.973); */
-  color: rgba(51, 51, 51, 0.89);
-  border: 2px solid rgba(51, 51, 51, 0.89);
+  color: #303C6C;
+  border: 2px solid #303C6C;
   font-size: .9em;
-  /* border-radius: 5px; */
+  border-radius: 5px;
   font-weight: bold;
-  /* // background-color: rgba(245, 244, 244, 0.973); */
+  background-color: #B4DFE5;
 }
 .share:hover {
   cursor: pointer;
+  background-color: #D2FDFF;
 
 }
 .bottom_inner_header{
-display: flex;
-align-items: center;
-justify-content: space-between;
-overflow: auto;
-background-color: #303C6C;
-padding: 10px;
+  padding: 8px 0;
+  border-bottom: 15px solid #B4DFE5;
+  font-size: 1.5em;
 }
 .form_wrap {
   width: fit-content;
@@ -74,7 +70,4 @@ form {
 }
 #search {
   padding: 2px 15px;
-}
-#lyrics {
-  color: white;
 }

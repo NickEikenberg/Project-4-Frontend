@@ -17,7 +17,7 @@ const Header = ({ isAdding, setIsAdding }) => {
           <span id="intro">At least one GOOD thing happened today.</span>
         </div>
         <div className="share" onClick={toggleAddForm}>
-          Submit Your OGT
+          share O.G.T
         </div>
       </div>
       <div className="bottom_inner_header">
@@ -25,10 +25,10 @@ const Header = ({ isAdding, setIsAdding }) => {
         <span id="lyrics">Today was a good day</span>
         </div>
         <div className="form_wrap">
-          <form>
+          {/* <form>
             <input id="search_bar" type="text" />
             <input id="search" type="submit" value="search" />
-          </form>
+          </form> */}
         </div>
       </div>
     </div>
