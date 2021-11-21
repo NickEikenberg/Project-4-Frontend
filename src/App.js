@@ -3,6 +3,7 @@ import axios from 'axios';
 import Messages from './components/Messages';
 import Header from './components/Header';
 import Add from './components/Add';
+import Footer from './components/Footer';
 
 const App = () => {
   let [isAdding, setIsAdding] = useState(false);
@@ -11,7 +12,7 @@ const App = () => {
   //connect to API and pull data
   const getMessages = () => {
     axios
-      .get('http://localhost:8000/api/messages')
+      .get('https://one-good-thing.herokuapp.com/api/messages')
       .then(
         (response) => setMessages(response.data),
         (err) => console.error(err)
@@ -23,7 +24,7 @@ const App = () => {
   //will take argument which will take state of message
   const handleCreate = (newMessage) => {
     axios
-      .post('http://localhost:8000/api/messages', newMessage) //what to push to api
+      .post('https://one-good-thing.herokuapp.com/api/messages', newMessage) //what to push to api
       .then((response) => {
         console.log(response.data);
         getMessages();
@@ -32,7 +33,9 @@ const App = () => {
   //delete takes an argument
   const handleDelete = (e) => {
     axios
-      .delete('http://localhost:8000/api/messages/' + e.target.value)
+      .delete(
+        'https://one-good-thing.herokuapp.com/api/messages/' + e.target.value
+      )
       .then((response) => {
         getMessages();
       });
@@ -62,6 +65,7 @@ const App = () => {
           setIsAdding={setIsAdding}
         />
       ) : null}
+      <Footer/>
     </div>
   );
 };
