@@ -1,12 +1,32 @@
 .messages-container {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 75%;
+  height: 80vh;
   padding: 20px 0;
+  background: whitesmoke;
+  margin: 1rem 10rem;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: inset 5px 5px 10px rgba(1, 1, 1, 0.1);
+  overflow: scroll;
 }
 
 .btn-container {
   display: flex;
   flex-direction: column;
   width: 4em;
+}
+
+.message {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: rgba(241, 233, 210, 0.3);
+  border-radius: 10px;
+}
+.message p {
+  color: #e27340;
+}
+.message button {
+  background: rgba(241, 233, 210, 0.3);
 }
